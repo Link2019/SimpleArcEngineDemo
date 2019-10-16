@@ -36,6 +36,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuAddShp = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.menuAddLyr = new System.Windows.Forms.ToolStripMenuItem();
+            this.图层属性ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
@@ -82,7 +84,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAddShp});
+            this.menuAddShp,
+            this.menuAddLyr,
+            this.图层属性ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(634, 25);
@@ -100,6 +104,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // menuAddLyr
+            // 
+            this.menuAddLyr.Name = "menuAddLyr";
+            this.menuAddLyr.Size = new System.Drawing.Size(58, 21);
+            this.menuAddLyr.Text = "添加lyr";
+            this.menuAddLyr.Click += new System.EventHandler(this.menuAddLyr_Click);
+            // 
+            // 图层属性ToolStripMenuItem
+            // 
+            this.图层属性ToolStripMenuItem.Name = "图层属性ToolStripMenuItem";
+            this.图层属性ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.图层属性ToolStripMenuItem.Text = "图层属性";
+            this.图层属性ToolStripMenuItem.Click += new System.EventHandler(this.图层属性ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -112,7 +130,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MapViewer";
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
@@ -133,6 +151,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuAddShp;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem menuAddLyr;
+        private System.Windows.Forms.ToolStripMenuItem 图层属性ToolStripMenuItem;
     }
 }
 

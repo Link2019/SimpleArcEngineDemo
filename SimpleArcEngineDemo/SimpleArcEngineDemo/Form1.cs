@@ -22,6 +22,11 @@ namespace SimpleArcEngineDemo
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 2.2添加shp数据————添加ShapeFile文件到地图控件中。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuAddShp_Click(object sender, EventArgs e)
         {
             //步骤1: 创建工作空间工厂。
@@ -64,6 +69,34 @@ namespace SimpleArcEngineDemo
             axMapControl1.ActiveView.Refresh();
 
 
+        }
+        /// <summary>
+        /// 通过lyr文件添加图层。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuAddLyr_Click(object sender, EventArgs e)
+        {
+            //步骤1: 打开文件对话框浏览到一个具体lyr文件。
+            openFileDialog1.Filter = "lyr文件(*.lyr)|*.lyr";
+            openFileDialog1.InitialDirectory = @"E:\arcgis开发\实验室";
+            openFileDialog1.Multiselect = false;
+            DialogResult pDialogResult = openFileDialog1.ShowDialog();
+            if (pDialogResult != DialogResult.OK)
+            {
+                return;
+            }
+            string pFileName = openFileDialog1.FileName;
+
+            //步骤2: 通过地图控件的方法(AddLayerFromFile)直接加载。
+            axMapControl1.AddLayerFromFile(pFileName);
+            axMapControl1.ActiveView.Refresh();
+        }
+
+        private void 图层属性ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FeatrAttributeTable frm = new FeatrAttributeTable(axMapControl1);
+            frm.ShowDialog();
         }
     }
 }
